@@ -11,6 +11,6 @@
 
 IP-адрес x.x.x.x
 
-Frontend https://...
+Frontend https://alexey.nomoredomains.xyz
 
-Backend https://...
+Backend https://api.alexey.nomoredomains.xyz
