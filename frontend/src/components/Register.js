@@ -22,6 +22,8 @@ export default function Register({ handelRegisterSubmit, /* errorMessage */ }) {
  function handelSubmit(e) {
   e.preventDefault();
   handelRegisterSubmit({ email, password });
+   console.log({ email, password });
+
  }
 
  return (

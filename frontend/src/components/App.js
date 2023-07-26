@@ -127,7 +127,7 @@ export default function App() {
   function handelRegisterSubmit({ email, password }) {
     auth.register({ email, password })
       .then(() => {
-        debugger;
+        // debugger;
         setIsRegisterPopupOpen(true);
         setIsInfoTolltip(true);
         navigate('/sign-in');
@@ -143,6 +143,7 @@ export default function App() {
   function handelLoginSubmit({ email, password }) {
     auth.authorize({ email, password })
       .then(data => {
+        debugger;
         if (data) {
           localStorage.setItem('jwt', data.token);
           handleLogin(email);
