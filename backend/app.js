@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 require('dotenv').config();
-const express = require('express');
+const { express, cors } = require('express');
 const helmet = require('helmet');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
@@ -17,6 +17,8 @@ mongoose.connect(DB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
+app.use(cors);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

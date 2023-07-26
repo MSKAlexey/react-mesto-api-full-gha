@@ -1,6 +1,6 @@
 class Api {
   constructor() {
-    this._url = "https://api.alexey.nomoredomains.xyz/";
+    this._url = "localhost:3000";
     this._headers = {
       authorization: "45c7ab21-c601-4d3e-824d-76630cdc55cf",
       "Content-Type": "application/json",
