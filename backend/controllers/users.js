@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs');
-const jsonWebToken = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 
 const createUser = (req, res, next) => {
@@ -55,7 +55,7 @@ const login = (req, res, next) => {
       bcrypt.compare(String(password), user.password)
         .then((isValidUser) => {
           if (isValidUser) {
-            const jwt = jsonWebToken.sign(
+            const token = jwt.sign(
               { _id: user._id },
               process.env['JWT-SECRET'],
             );
@@ -65,7 +65,8 @@ const login = (req, res, next) => {
             //   sameSite: true,
             // });
             // res.send({ data: user.toJSON() });
-            res.send({ jwt, data: user.toJSON() });
+            // res.send({ jwt, data: user.toJSON() });
+            res.json({ token, data: user.toJSON() });
           } else {
             next(res.status(401));
           }
