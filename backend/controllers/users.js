@@ -65,8 +65,7 @@ const login = (req, res, next) => {
             //   sameSite: true,
             // });
             // res.send({ data: user.toJSON() });
-            // res.send({ jwt, data: user.toJSON() });
-            res.json({ token, data: user.toJSON() });
+            res.send({ token });
           } else {
             next(res.status(401));
           }

@@ -1,9 +1,13 @@
 const jwt = require('jsonwebtoken');
 
 const auth = (req, res, next) => {
-  // const token = req.cookies.jwt;
-  const token = req.headers.replace('Bearer ', '');
-  console.log(token);
+  // const token = req.headers.authorization;
+  const { authorization } = req.headers;
+
+  if (!authorization.startsWith('Bearer')) {
+    next(res.status(401));
+  }
+  const token = authorization.split('Bearer ')[1];
 
   let payload;
   try {
