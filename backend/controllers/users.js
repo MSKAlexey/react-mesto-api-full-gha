@@ -21,7 +21,7 @@ const createUser = (req, res, next) => {
         password: hashedPassword,
       })
         .then((user) => {
-          res.status(201).send({ data: user });
+          res.status(201).send(user);
         })
         .catch((err) => {
           if (err.code === 11000) {
@@ -36,7 +36,7 @@ const createUser = (req, res, next) => {
 
 const getUsers = (req, res, next) => {
   User.find({})
-    .then((users) => res.send({ data: users }))
+    .then((users) => res.send(users))
     .catch(next);
 };
 
