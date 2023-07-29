@@ -12,7 +12,7 @@ const createCard = (req, res, next) => {
     owner: req.user._id,
   })
     .then((card) => {
-      res.status(201).send({ data: card });
+      res.status(201).send(card);
     })
     .catch(next);
 };
@@ -33,7 +33,7 @@ const deleteCard = (req, res, next) => {
         next(res.status(403).send('Удалять можно только свои карточки'));
       } else {
         card.deleteOne(card)
-          .then(() => res.send({ data: card }));
+          .then(() => res.send(card));
       }
     })
     .catch(next);

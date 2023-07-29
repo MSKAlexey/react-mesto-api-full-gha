@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const cardSchema = new mongoose.Schema({
+  likes: {
+    type: [mongoose.Schema.Types.ObjectId],
+    default: [],
+    ref: 'user',
+  },
   name: {
     type: String,
     required: [true, 'Поле name должно быть заполнено'],
@@ -16,10 +21,7 @@ const cardSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     required: [true, 'Поле owner должно быть заполнено'],
   },
-  likes: {
-    type: [mongoose.Schema.Types.ObjectId],
-    default: [],
-  },
+
   createdAt: {
     type: Date,
     default: Date.now,
