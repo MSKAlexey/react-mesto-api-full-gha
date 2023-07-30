@@ -1,6 +1,6 @@
 class Api {
   constructor() {
-    this._url = "http://127.0.0.1:3000";
+    this._url = "https://api.alexey.nomoredomains.xyz";
   }
 
   _checkStatusResponse(res) {
