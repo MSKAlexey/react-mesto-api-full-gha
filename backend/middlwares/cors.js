@@ -4,6 +4,7 @@ const allowedCors = [
   'http://127.0.0.1:3000/users/me',
   'http://127.0.0.1:3000/cards',
   'https://api.alexey.nomoredomains.xyz/',
+  'https://alexey.nomoredomains.xyz/',
 ];
 
 module.exports = (req, res, next) => {
