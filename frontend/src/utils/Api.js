@@ -1,6 +1,7 @@
 class Api {
   constructor() {
-    this._url = "https://api.alexey.nomoredomains.xyz";
+    this._url = 'https://api.alexey.nomoredomains.xyz';
+    // this._url = 'http://localhost:3000';
   }
 
   _checkStatusResponse(res) {
@@ -14,9 +15,7 @@ class Api {
     const token = localStorage.getItem('jwt');
     return fetch(`${this._url}/cards`,
       {
-        method: "GET",
-        // headers: this._headers,
-        // headers: `Bearer ${token}`,
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
@@ -28,9 +27,7 @@ class Api {
     const token = localStorage.getItem('jwt');
     return fetch(`${this._url}/cards`,
       {
-        method: "POST",
-        // headers: this._headers,
-        // headers: `Bearer ${token}`,
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
@@ -46,8 +43,7 @@ class Api {
     const token = localStorage.getItem('jwt');
     return fetch(`${this._url}/cards/${cardId}`,
       {
-        method: "DELETE",
-        // headers: this._headers,
+        method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
@@ -57,12 +53,9 @@ class Api {
 
   getUserInfo() {
     const token = localStorage.getItem('jwt');
-    // debugger
     return fetch(`${this._url}/users/me`,
       {
-        method: "GET",
-        // headers: this._headers,
-        // headers: `Bearer ${token}`,
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
@@ -74,9 +67,7 @@ class Api {
     const token = localStorage.getItem('jwt');
     return fetch(`${this._url}/users/me`,
       {
-        method: "PATCH",
-        // headers: this._headers,
-        // headers: `Bearer ${token}`,
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
@@ -92,9 +83,7 @@ class Api {
     const token = localStorage.getItem('jwt');
     return fetch(`${this._url}/users/me/avatar`,
       {
-        method: "PATCH",
-        // headers: this._headers,
-        // headers: `Bearer ${token}`,
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
@@ -110,7 +99,7 @@ class Api {
     debugger
     return fetch(`${this._url}/cards/${cardId}/likes`,
       {
-        method: "PUT",
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
@@ -123,7 +112,7 @@ class Api {
     debugger
     return fetch(`${this._url}/cards/${cardId}/likes`,
       {
-        method: "DELETE",
+        method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
