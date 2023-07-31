@@ -1,12 +1,12 @@
 const allowedCors = [
   'http://localhost:3001',
   'http://localhost:3000',
-  'http://127.0.0.1:3000/users/me',
-  'http://127.0.0.1:3000/cards',
+  // 'http://127.0.0.1:3000/users/me',
+  // 'http://127.0.0.1:3000/cards',
   'https://api.alexey.nomoredomains.xyz/',
   'https://alexey.nomoredomains.xyz/',
-  'https://api.alexey.nomoredomains.xyz/signin',
-  'https://api.alexey.nomoredomains.xyz/users/me',
+  // 'https://api.alexey.nomoredomains.xyz/signin',
+  // 'https://api.alexey.nomoredomains.xyz/users/me',
 ];
 
 module.exports = (req, res, next) => {
