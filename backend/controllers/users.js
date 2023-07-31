@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
+const { JWT } = require('../utils/config');
 
 const createUser = (req, res, next) => {
   const {
@@ -57,7 +58,7 @@ const login = (req, res, next) => {
           if (isValidUser) {
             const token = jwt.sign(
               { _id: user._id },
-              process.env['JWT-SECRET'],
+              JWT,
             );
             // res.cookie('jwt', jwt, {
             //   maxAge: 360000,
