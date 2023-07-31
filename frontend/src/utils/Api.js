@@ -1,7 +1,7 @@
 class Api {
   constructor() {
-    this._url = 'https://api.alexey.nomoredomains.xyz';
-    // this._url = 'http://localhost:3000';
+    // this._url = 'https://api.alexey.nomoredomains.xyz';
+    this._url = 'http://localhost:3000';
   }
 
   _checkStatusResponse(res) {

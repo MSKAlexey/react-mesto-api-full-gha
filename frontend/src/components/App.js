@@ -105,7 +105,7 @@ export default function App() {
   }
   // редактируем имя и профессию профиля
   function handleUpdateUser(data) {
-    api.changeUserInfo({ data })
+    api.changeUserInfo(data)
       .then(
         (data) => {
           setCurrentUser(data);
