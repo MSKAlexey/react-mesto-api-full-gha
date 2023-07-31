@@ -1,8 +1,7 @@
 const allowedCors = [
   'https://alexey.nomoredomains.xyz',
   'https://api.alexey.nomoredomains.xyz',
-  'https://api.alexey.nomoredomains.xyz/signin',
-  // 'https://alexey.nomoredomains.xyz',
+  'http://localhost:3000',
 ];
 
 module.exports = (req, res, next) => {
