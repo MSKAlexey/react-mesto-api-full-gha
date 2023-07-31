@@ -1,5 +1,5 @@
-// export const BASE_URL = 'https://api.alexey.nomoredomains.xyz';
-export const BASE_URL = 'http://localhost:3000';
+export const BASE_URL = 'https://api.alexey.nomoredomains.xyz';
+// export const BASE_URL = 'http://localhost:3000';
 
 function checkStatusResponse(res) {
   if (res.ok) {
