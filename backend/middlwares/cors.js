@@ -1,6 +1,7 @@
 const allowedCors = [
   'https://alexey.nomoredomains.xyz/',
   'https://api.alexey.nomoredomains.xyz/',
+  'https://api.alexey.nomoredomains.xyz/signin',
 ];
 
 module.exports = (req, res, next) => {
