@@ -8,7 +8,7 @@ const rateLimit = require('express-rate-limit');
 const { errors } = require('celebrate');
 const routes = require('./routes');
 const errorHandler = require('./errors/errors');
-// const cors = require('./middlwares/cors');
+const cors = require('./middlwares/cors');
 const { requestLogger, errorLogger } = require('./middlwares/logger');
 
 const { PORT = 3000, DB_URL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
@@ -33,9 +33,9 @@ const limiter = rateLimit({
   legacyHeaders: false,
 });
 
-app.use(limiter);
+app.use(cors);
 
-// app.use(cors);
+app.use(limiter);
 
 app.use(routes);
 
