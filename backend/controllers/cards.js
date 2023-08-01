@@ -45,10 +45,11 @@ const likeCard = (req, res, next) => {
     { $addToSet: { likes: req.user._id } },
     { new: true },
   )
+    .populate(['owner', 'likes'])
     // eslint-disable-next-line consistent-return
     .then((card) => {
       if (card) {
-        return res.send({ message: 'Вы поставили лайк' });
+        return res.send(card);
       }
       next(res.status(404).send('Карточка не найдена'));
     })
@@ -70,7 +71,7 @@ const dislikeCard = (req, res, next) => {
     // eslint-disable-next-line consistent-return
     .then((card) => {
       if (card) {
-        return res.send({ message: 'Вы удалили лайк' });
+        return res.send(card);
       }
       next(res.status(404).send('Карточка не найдена'));
     })
