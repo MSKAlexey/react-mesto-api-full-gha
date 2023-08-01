@@ -9,6 +9,7 @@ const { errors } = require('celebrate');
 const routes = require('./routes');
 const errorHandler = require('./errors/errors');
 const cors = require('./middlwares/cors');
+const { requestLogger, errorLogger } = require('./middlwares/logger');
 
 const { PORT = 3000, DB_URL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 const app = express();
@@ -24,16 +25,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+app.use(requestLogger);
+
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
   standardHeaders: true,
   legacyHeaders: false,
 });
+app.use(limiter);
 
 app.use(routes);
 
-app.use(limiter);
+app.use(errorLogger);
 
 app.use(errors());
 

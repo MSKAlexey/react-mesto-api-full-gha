@@ -1,9 +1,9 @@
-import ConflictError from './ConflictError';
-import BadRequestError from './BadRequestError';
-import UnauthorizedError from './UnauthorizedError';
-import ForbiddenError from './ForbiddenError';
-import NotFoundError from './NotFoundError';
-import InternalServerError from './InternalServerError';
+const ConflictError = require('./ConflictError');
+const BadRequestError = require('./BadRequestError');
+const UnauthorizedError = require('./UnauthorizedError');
+const ForbiddenError = require('./ForbiddenError');
+const NotFoundError = require('./NotFoundError');
+const InternalServerError = require('./InternalServerError');
 
 // class NotFoundError extends Error {
 //   constructor(err) {
