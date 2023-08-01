@@ -7,7 +7,7 @@ const auth = (req, res, next) => {
   const { authorization } = req.headers;
 
   if (!authorization.startsWith('Bearer')) {
-    next(res.status(401));
+    return next(res.status(401));
   }
   const token = authorization.split('Bearer ')[1];
 
