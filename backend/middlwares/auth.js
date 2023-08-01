@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const { JWT } = require('../utils/config');
+const UnauthorizedError = require('../errors/UnauthorizedError');
 
 // eslint-disable-next-line consistent-return
 const auth = (req, res, next) => {
@@ -7,7 +8,7 @@ const auth = (req, res, next) => {
   const { authorization } = req.headers;
 
   if (!authorization.startsWith('Bearer')) {
-    return next(res.status(401));
+    return next(new UnauthorizedError('Авторизуйтесь'));
   }
   const token = authorization.split('Bearer ')[1];
 
