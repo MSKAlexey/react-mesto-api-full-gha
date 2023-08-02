@@ -14,7 +14,7 @@ const DEV_SECRET = 'SECRETSECRETSECRET';
 const DEV_DB_HOST = 'mongodb://localhost:27017/mydatabase';
 const DEV_PORT = 3000;
 */
-const DEV_SECRET = 'SECRET-KEY';
+const DEV_SECRET = '2aff12ed0d1655cfe770d9921eb907a760b9af3486e0181177d5b0592b997173';
 
 // далее задаем переменные которые уже пойдут наружу
 
